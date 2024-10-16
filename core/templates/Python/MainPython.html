@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Django Blogs{% endblock title %}
+{% block main_content %}
+<br>
+<h1 class="pd-top-20" style="display: flex; justify-content: center; font-family: 'Arial', sans-serif; font-size: 3em; color: #3498db; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); margin-top: 20px; overflow: hidden;">
+    <span class="sliding-text">Python Blogs</span>
+  </h1>
+  
+  <style>
+  .sliding-text {
+    display: inline-block;
+    animation: slide-in 2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  </style>
+
+
+
+
+
+
+
+  
+<div class="pd-top-80 pd-bottom-50" id="grid">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-post-wrap style-overlay" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 350px; border: 1px solid #ddd; padding: 15px; box-sizing: border-box; margin-bottom: 20px;">
+                    <div class="thumb" style="height: 200px;">
+                        <img src="{% static 'assets/python/beautifulsoupselenium.png' %}" alt="Beautiful Soup vs Selenium" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+            
+                    <div class="details" style="text-align: center; padding-top: 15px;">
+                        <div class="post-meta-single">
+                            <p style="margin: 0; font-size: 14px;"><i class="fa fa-clock-o"></i>10.03.2024</p>
+                        </div>
+                        <h6 class="title" style="font-size: 16px; font-weight: bold; margin-top: 10px;">
+                            <a href="/python/beautiful-soup-vs-selenium">Beautiful Soup vs. Selenium: Which Tool is Best for Web Scraping?</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+        
+
+        </div>
+
+
+
+
+    </div>  
+
+</div>
+
+{% endblock main_content %}
+
+
+
+
+

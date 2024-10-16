@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    
+    <!-- favicon -->
+    <link rel=icon href="{% static 'assets/img/favicon.png' %}" sizes="20x20" type="image/png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'assets/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.min.css"
+    rel="stylesheet"
+    />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            }
+            .carousel-item {
+                min-height: 300px; /* Adjust based on your content */
+                }
+                .single-post-wrap {
+                padding: 10px;
+                background: #fff;
+                border-radius: 5px;
+            }
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+    <!-- preloader area start -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- search popup start-->
+    <div class="td-search-popup" id="td-search-popup">
+        <form action="index.html" class="search-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search.....">
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+    <!-- search popup end-->
+    <div class="body-overlay" id="body-overlay"></div>
+
+    <!-- header start -->
+    <div class="navbar-area">
+
+        <!-- navbar start -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nav-container">
+                <div class="responsive-mobile-menu">
+                    <div class="logo d-lg-none d-block">
+                        <a class="main-logo" href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="img"></a>
+                    </div>
+                    <button class="menu toggle-btn d-block d-lg-none" data-target="#nextpage_main_menu" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-left"></span>
+                        <span class="icon-right"></span>
+                    </button>
+                </div>
+                <div class="nav-right-part nav-right-part-mobile">
+                    <a class="search header-search" href="#"><i class="fa fa-search"></i></a>
+                </div>
+                <div class="collapse navbar-collapse" id="nextpage_main_menu">
+                    <ul class="navbar-nav menu-open">
+                        <li class="current-menu-item">
+                            <a href="/">Home</a>
+                        </li>                        
+                        <li class="current-menu-item">
+                            <a href="#trending">Latest Blog</a>
+                        </li>                            
+                                                                                    
+
+
+                    </ul>
+                </div>
+                <div class="nav-right-part nav-right-part-desktop">
+                    <div class="menu-search-inner">
+                        <input type="text" placeholder="Search For">
+                        <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- navbar end -->
+
+
+
+    <!-- banner area start -->
+    <div class="banner-area banner-inner-1 bg-black" id="banner">
+        <!-- banner area start -->
+        <div class="banner-inner pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="thumb after-left-top">
+                            <img src="{% static 'assets/img/banner/1.jpg' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="banner-details mt-4 mt-lg-0">
+                            <div class="post-meta-single">
+                                <ul>
+                                    <li><a class="tag-base tag-blue" href="#">Tech</a></li>
+                                    <li class="date"><i class="fa fa-clock-o"></i>08.22.2020</li>
+                                </ul>
+                            </div>
+                            <h2>Empower Your Future with Expert Technology Insights</h2>
+                            <p>Welcome to our technology blog, where we share insights, updates, and solutions for all your tech needs. Whether you're a professional or an enthusiast, our team is dedicated to helping you transform your projects into advanced online businesses. Stay tuned for the latest trends, tips, and expert advice in the world of technology. </p>
+                            <a class="btn btn-blue" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- banner area end -->
+
+
+        <h3 style="display: flex;justify-content: center; margin-top: 4px; margin-bottom: 4px; color: aliceblue;">Categories</h3>
+        <br>
+        <br>
+
+
+
+
+        <div id="postCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 20px;margin-left: 20px; margin-right: 20px;" >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row mb-4"> <!-- Add margin-bottom here -->
+                        <!-- Box 1 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/django">
+                                    <img src="{% static 'assets/img/django/image.jpg' %}" class="card-img-top" alt="Django" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/django" class="text-dark">Explore Django Blogs and Resources</a>
+                                    </h5>
+                                    <p class="card-text">Discover the latest in Django development with authoritative blogs and resources.</p>
+                                    <a href="/django" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Box 2 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/nodejs">
+                                    <img src="{% static 'assets/img/django/nodejs.jpg' %}" class="card-img-top" alt="Node.js" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/nodejs" class="text-dark">Insights into Node.js Development</a>
+                                    </h5>
+                                    <p class="card-text">Get in-depth knowledge and tips for mastering Node.js.</p>
+                                    <a href="/nodejs" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Box 3 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/python">
+                                    <img src="{% static 'assets/img/django/python.jpg' %}" class="card-img-top" alt="Python" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/python" class="text-dark">Master Python with Our Resources</a>
+                                    </h5>
+                                    <p class="card-text">Explore comprehensive tutorials and guides on Python programming.</p>
+                                    <a href="/python" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="carousel-item">
+                    <div class="row mb-4"> <!-- Add margin-bottom here -->
+                        <!-- Box 4 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/javascript">
+                                    <img src="{% static 'assets/img/django/javascript.jpg' %}" class="card-img-top" alt="JavaScript" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/javascript" class="text-dark">JavaScript: A Comprehensive Guide</a>
+                                    </h5>
+                                    <p class="card-text">Delve into the world of JavaScript with expert insights and tutorials.</p>
+                                    <a href="/javascript" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Box 5 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/ruby">
+                                    <img src="{% static 'assets/img/django/ruby.jpg' %}" class="card-img-top" alt="Ruby" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/ruby" class="text-dark">Explore Ruby Resources</a>
+                                    </h5>
+                                    <p class="card-text">Find top-tier Ruby blogs and resources for developers.</p>
+                                    <a href="/ruby" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Box 6 -->
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                                <a href="/golang">
+                                    <img src="{% static 'assets/img/django/golang.jpg' %}" class="card-img-top" alt="Go" style="object-fit: cover; width: 100%; height: 200px;">
+                                </a>
+                                <div class="card-body" style="padding: 15px;">
+                                    <h5 class="card-title">
+                                        <a href="/golang" class="text-dark">Discover Go Programming</a>
+                                    </h5>
+                                    <p class="card-text">Learn everything about Go with our expert resources and tutorials.</p>
+                                    <a href="/golang" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" href="#postCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(167, 4, 4, 0.7); border-radius: 50%;"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#postCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(167, 4, 4, 0.7); border-radius: 50%;"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+        
+
+
+
+        
+
+
+    <h1 id="trending" class="pd-top-20" style="display: flex; justify-content: center; font-family: 'Arial', sans-serif; font-size: 3em; color: #3498db; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); margin-top: 20px; overflow: hidden;">
+        <span class="sliding-text">Latest Blogs</span>
+    </h1>
+    
+      
+      <style>
+      .sliding-text {
+        display: inline-block;
+        animation: slide-in 2s ease-out forwards;
+        opacity: 0;
+      }
+      
+      @keyframes slide-in {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      </style>
+      
+
+    <!-- banner area end -->
+  
+
+
+    <div class="pd-top-80 pd-bottom-50" id="grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/15.png' %}" alt="img">
+                            <a class="tag-base tag-purple" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">Why Are the Offspring of Older </a></h6>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/16.png' %}" alt="img">
+                            <a class="tag-base tag-green" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">People Who Eat a Late Dinner May</a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/17.png' %}" alt="img">
+                            <a class="tag-base tag-red" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">Kids eat more calories in </a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/18.png' %}" alt="img">
+                            <a class="tag-base tag-purple" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">The FAA will test drone </a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/19.png' %}" alt="img">
+                            <a class="tag-base tag-red" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">Lifting Weights Makes Your Nervous</a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/20.png' %}" alt="img">
+                            <a class="tag-base tag-blue" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">New, Remote Weight-Loss Method </a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/21.png' %}" alt="img">
+                            <a class="tag-base tag-light-green" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">Social Connection Boosts Fitness App </a></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay">
+                        <div class="thumb">
+                            <img src="{% static 'assets/img/post/22.png' %}" alt="img">
+                            <a class="tag-base tag-blue" href="#">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single">
+                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            </div>
+                            <h6 class="title"><a href="#">Internet For Things - New results </a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+        </div>  
+    </div>
+
+    <div class="footer-area bg-black pd-top-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h5 class="widget-title">ABOUT US</h5>
+                        <div class="widget_about">
+                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <ul class="social-area social-area-2 mt-4">
+                                <li><a class="facebook-icon" href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter-icon" href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="youtube-icon" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                                <li><a class="instagram-icon" href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a class="google-icon" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget widget_tag_cloud">
+                        <h5 class="widget-title">TAGS</h5>
+                        <div class="tagcloud">
+                            <a href="#">Consectetur</a>
+                            <a href="#">Video</a>
+                            <a href="#">App</a>
+                            <a href="#">Food</a>
+                            <a href="#">Game</a>
+                            <a href="#">Internet</a>
+                            <a href="#">Phones</a>
+                            <a href="#">Development</a>
+                            <a href="#">Video</a>
+                            <a href="#">Game</a>
+                            <a href="#">Gadgets</a>        
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h5 class="widget-title">CONTACTS</h5>  
+                        <ul class="contact_info_list">
+                            <li><i class="fa fa-map-marker"></i> Lahore, Paksitan</li>
+                            <li><i class="fa fa-phone"></i> +923110696252</li>
+                            <li><i class="fa fa-envelope-o"></i> Info@website.com <br> shoaibahmadbhatti6252@mail.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget widget_recent_post">
+                        <h5 class="widget-title">POPULAR NEWS</h5>
+                        <div class="single-post-list-wrap style-white">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="{% static 'assets/img/post/list/1.png' %}" alt="img">
+                                </div>
+
+
+                                <div class="media-body">
+                                    <div class="details">
+                                        <div class="post-meta-single">
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>08.22.2020</li>
+                                            </ul>
+                                        </div>
+                                        <h6 class="title"><a href="#">Himachal Pradesh rules in order to allow tourists </a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-post-list-wrap style-white">
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="{% static 'assets/img/post/list/2.png' %}" alt="img">
+                                </div>
+                                <div class="media-body">
+                                    <div class="details">
+                                        <div class="post-meta-single">
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>08.22.2020</li>
+                                            </ul>
+                                        </div>
+                                        <h6 class="title"><a href="#">Himachal Pradesh rules in order to allow tourists </a></h6>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <ul class="widget_nav_menu">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">rivacy Policy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <p>Copyright ©2021 <a href="https://solverwp.com/">SolverWp</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- back to top area start -->
+    <div class="back-to-top">
+        <span class="back-top"><i class="fa fa-angle-up"></i></span>
+    </div>
+    <!-- back to top area end -->
+
+    <!-- all plugins here -->
+    <script src="{% static 'assets/js/vendor.js' %}"></script>
+    <!-- main js  -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.0.0/mdb.umd.min.js"
+></script>
+</body>
+</html>
+
+

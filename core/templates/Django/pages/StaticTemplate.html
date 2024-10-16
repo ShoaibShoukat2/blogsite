@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Configuring Static and Template Folders in Django{% endblock title %}
+
+{% block main_content %}
+<!-- MDB Container -->
+<div class="container mt-5">
+    <!-- Page Header -->
+    <header class="text-center mb-4">
+        <h1 class="display-4 font-weight-bold">Configuring Static and Template Folders in Django</h1>
+        <p class="lead">A comprehensive guide to managing static files and templates in your Django application.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <!-- Introduction Card -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <p>When building a Django web application, one of the essential tasks is to configure your static files and templates. Proper configuration ensures that your site's assets, such as CSS, JavaScript, and images, are correctly served, and that your templates are rendered as expected. In this blog post, we’ll walk through the steps to configure both static and template folders in Django.</p>
+                </div>
+            </div>
+
+            <!-- Static Files Section -->
+            <section id="static-files">
+                <h2 class="mb-4 text-primary">1. Understanding Static Files</h2>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p>Static files are the assets of your web application that don’t change dynamically, such as CSS stylesheets, JavaScript files, and images. By default, Django serves static files from the <code>static</code> directory in each app, but you may want to configure a centralized location for all static files.</p>
+                        <h3 class="mt-3 mb-3">Step-by-Step Configuration:</h3>
+                        <ol>
+                            <li>
+                                <strong>Create a Static Directory:</strong>
+                                <p>In the root of your Django project (where <code>manage.py</code> is located), create a directory named <code>static</code>. This will be used to store all your static files.</p>
+                                <pre><code>myproject/
+    manage.py
+    myapp/
+    static/
+        css/
+        js/
+        images/</code></pre>
+                            </li>
+                            <li>
+                                <strong>Update <code>settings.py</code>:</strong>
+                                <p>Configure Django to look for static files in this directory by updating the <code>STATICFILES_DIRS</code> setting in your <code>settings.py</code> file:</p>
+                                <pre><code>STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]</code></pre>
+                                <p><code>STATIC_URL</code> is the URL endpoint for static files, and <code>STATICFILES_DIRS</code> tells Django where to look for these files.</p>
+                            </li>
+                            <li>
+                                <strong>Collect Static Files:</strong>
+                                <p>When deploying your application, use the <code>collectstatic</code> command to gather all static files into a single directory:</p>
+                                <pre><code>python manage.py collectstatic</code></pre>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Templates Section -->
+            <section id="templates">
+                <h2 class="mb-4 text-primary">2. Configuring Templates</h2>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p>Templates are HTML files that define the structure of your web pages. Django uses a templating system to dynamically generate HTML pages based on your data.</p>
+                        <h3 class="mt-3 mb-3">Step-by-Step Configuration:</h3>
+                        <ol>
+                            <li>
+                                <strong>Create a Templates Directory:</strong>
+                                <p>Inside your project directory (where <code>settings.py</code> is located), create a directory named <code>templates</code>. This is where you’ll place your HTML files.</p>
+                                <pre><code>myproject/
+    manage.py
+    myapp/
+    templates/
+        base.html
+        home.html</code></pre>
+                            </li>
+                            <li>
+                                <strong>Update <code>settings.py</code>:</strong>
+                                <p>Configure Django to locate templates in this directory by updating the <code>TEMPLATES</code> setting in your <code>settings.py</code> file:</p>
+                                <pre><code>TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]</code></pre>
+                                <p><code>DIRS</code> specifies the directories where Django should look for templates. <code>APP_DIRS</code> set to <code>True</code> enables Django to also look for templates within each app’s <code>templates</code> directory.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Usage Section -->
+            <section id="usage">
+                <h2 class="mb-4 text-primary">3. Using Static Files and Templates</h2>
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p>Now that you’ve configured your static files and templates, you can use them in your Django views and templates.</p>
+                        <ul>
+                            <li>
+                                <strong>In Your Templates:</strong>
+                                <p>Use the <code>{% static 'path/to/file' %}</code> template tag to reference static files. For example:</p>
+                                <pre><code>&lt;link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"&gt;
+&lt;script src="{% static 'js/scripts.js' %}"&gt;&lt;/script&gt;</code></pre>
+                            </li>
+                            <li>
+                                <strong>In Your Views:</strong>
+                                <p>Render templates using Django’s <code>render</code> function:</p>
+                                <pre><code>from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')</code></pre>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion Section -->
+            <section id="conclusion">
+                <h2 class="mb-4 text-primary">Conclusion</h2>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p>Configuring static and template folders is a crucial part of setting up a Django project. By following the steps outlined above, you ensure that your static files and templates are correctly managed, making it easier to develop and maintain your web application. Happy coding!</p>
+                        <!-- Call to Action Button -->
+                        <div class="text-center mt-4">
+                            <a href="/" class="btn btn-primary">Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock main_content %}
+

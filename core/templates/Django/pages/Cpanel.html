@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+cPanel Deployment
+{% endblock title %}
+{% block main_content %}
+<div class="container my-5">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h1 class="text-center mb-4">Deploying Django Website on cPanel</h1>
+
+      <p class="lead">Follow this guide to deploy your Django website on cPanel using Material Design for Bootstrap (MDB) for a modern, responsive design.</p>
+
+      <h2 class="mb-3">Step 1: Prepare Your Django Project for Deployment</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Install necessary packages:</strong> You need <code>whitenoise</code> to serve static files in production.
+          <pre class="bg-light p-3"><code>pip install whitenoise</code></pre>
+        </li>
+        <li class="list-group-item">
+          <strong>Update <code>settings.py</code>:</strong> Set <code>DEBUG = False</code> and add your domain to <code>ALLOWED_HOSTS</code>.
+          <pre class="bg-light p-3"><code>
+ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # other middleware
+]
+</code></pre>
+        </li>
+        <li class="list-group-item">
+          <strong>Collect static files:</strong> Run the following command:
+          <pre class="bg-light p-3"><code>python manage.py collectstatic</code></pre>
+        </li>
+        <li class="list-group-item">
+          <strong>Configure your database:</strong> If using MySQL, update your <code>settings.py</code>.
+          <pre class="bg-light p-3"><code>
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_db_name',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+</code></pre>
+        </li>
+      </ul>
+
+      <h2 class="mb-3 mt-4">Step 2: Configure cPanel for Django</h2>
+      <p class="lead">Now that your project is prepared, you can configure cPanel.</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Create a Python Application:</strong> Log in to cPanel, navigate to <strong>Setup Python App</strong>, and create your application.
+        </li>
+        <li class="list-group-item">
+          <strong>Install Dependencies:</strong> In your virtual environment, install Django and other required packages:
+          <pre class="bg-light p-3"><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li class="list-group-item">
+          <strong>Configure wsgi.py:</strong> Ensure it points to your Django settings.
+          <pre class="bg-light p-3"><code>
+import os
+from django.core.wsgi import get_wsgi_application
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project_name.settings')
+application = get_wsgi_application()
+</code></pre>
+        </li>
+        <li class="list-group-item">
+          <strong>Migrate your database:</strong> Run migrations to set up your database:
+          <pre class="bg-light p-3"><code>python manage.py migrate</code></pre>
+        </li>
+      </ul>
+
+      <h2 class="mb-3 mt-4">Step 3: Deploy Static Files</h2>
+      <p class="lead">Static files need to be deployed for production:</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Upload static files:</strong> Make sure to upload your static files to the <code>public_html</code> directory in cPanel.
+        </li>
+      </ul>
+
+      <h2 class="mb-3 mt-4">Step 4: Final Testing and Go Live</h2>
+      <p class="lead">Before launching your site, make sure everything is working as expected:</p>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Test your Django app by visiting your domain.
+        </li>
+        <li class="list-group-item">
+          Ensure static files (CSS, JS) are loading correctly.
+        </li>
+      </ul>
+
+      <div class="text-center mt-5">
+        <button class="btn btn-primary btn-lg">Go Live</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}

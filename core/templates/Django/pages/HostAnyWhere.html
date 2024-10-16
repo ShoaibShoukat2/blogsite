@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+How to Host a Django Website on PythonAnywhere
+{% endblock title %}
+{% block main_content %}
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="jumbotron text-center bg-primary text-white py-5">
+        <h1 class="display-4">Host Your Django Website on PythonAnywhere</h1>
+        <p class="lead">A step-by-step guide to deploying your Django application effortlessly.</p>
+        <hr class="my-4">
+        <a class="btn btn-light btn-lg" href="https://www.pythonanywhere.com/" target="_blank" role="button">Get Started with PythonAnywhere</a>
+    </div>
+
+    <!-- Guide Steps -->
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 1: Create an Account</h3>
+                <p class="card-text">Go to the <a href="https://www.pythonanywhere.com/" target="_blank">PythonAnywhere</a> website and sign up for an account. The free tier is sufficient for small projects.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 2: Upload Your Django Project</h3>
+                <img src="{% static 'assets/img/django/pythonAnyWhere/anywhere_steps.png' %}" class="img-fluid mb-3" alt="Upload Django Project">
+                <p class="card-text">Log in, navigate to the "Files" tab, and upload your Django project files. Alternatively, use the Bash console to clone your project from Git.</p>
+                <pre class="bg-light p-3 rounded"><code>git clone https://github.com/yourusername/yourproject.git</code></pre>
+                <img src="{% static 'assets/img/django/pythonAnyWhere/git_clone.png' %}" class="img-fluid mb-3" alt="Clone Django Project">
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 3: Set Up a Virtual Environment</h3>
+                <p class="card-text">Start a new Bash console and create a virtual environment:</p>
+                <pre class="bg-light p-3 rounded"><code>mkvirtualenv myenv --python=python3.8
+pip install django
+pip install -r requirements.txt</code></pre>
+                <p class="card-text">Replace <code>myenv</code> with your virtual environment name and adjust the Python version if needed.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 4: Configure Your Web App</h3>
+                <p class="card-text">Navigate to the "Web" tab, click "Add a new web app", choose "Manual configuration", and select the appropriate Python version. Specify your project's working directory and the path to the WSGI file. Add the following lines to your WSGI file:</p>
+                <pre class="bg-light p-3 rounded"><code>import os
+import sys
+
+project_home = u'/home/yourusername/yourproject'
+if project_home not in sys.path:
+    sys.path = [project_home] + sys.path
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'yourproject.settings'
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 5: Configure Your Static Files</h3>
+                <img src="{% static 'assets/img/django/pythonAnyWhere/staticfiles.png' %}" class="img-fluid mb-3" alt="Configure Static Files">
+                <p class="card-text">Click on the "Web" tab, scroll to the bottom, and click on the URL to add the static files. Then add the complete URL of your static files:</p>
+                <pre class="bg-light p-3 rounded"><code>STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 6: Set Up Your Database</h3>
+                <p class="card-text">For databases like PostgreSQL or MySQL, set up the database on PythonAnywhere and update your Django settings. Find database setup instructions under the "Databases" tab.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 7: Collect Static Files</h3>
+                <p class="card-text">In your Bash console, run:</p>
+                <pre class="bg-light p-3 rounded"><code>python manage.py collectstatic</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 8: Apply Migrations</h3>
+                <p class="card-text">Run the following commands to apply your database migrations:</p>
+                <pre class="bg-light p-3 rounded"><code>python manage.py makemigrations
+python manage.py migrate</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Step 9: Test Your Application</h3>
+                <p class="card-text">Navigate to the URL provided by PythonAnywhere to see your live Django application. Test all features to ensure everything works as expected.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion Section -->
+    <div class="card text-white bg-success mb-4 shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title">Conclusion</h3>
+            <p class="card-text">Deploying your Django website on PythonAnywhere is straightforward. By following these steps, you can quickly get your site up and running in a reliable and scalable environment.</p>
+        </div>
+    </div>
+</div>
+{% endblock main_content %}
+
+
+
+
