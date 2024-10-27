@@ -102,8 +102,7 @@
                         <li class="current-menu-item">
                             <a href="#trending">Latest Blog</a>
                         </li>                            
-                                                                                    
-
+                                                                                
 
                     </ul>
                 </div>
@@ -117,6 +116,7 @@
         </nav>
     </div>
     <!-- navbar end -->
+
 
 
 
@@ -158,109 +158,80 @@
 
 
 
-        <div id="postCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 20px;margin-left: 20px; margin-right: 20px;" >
+        <div id="postCarousel" class="carousel slide" data-ride="carousel" style="margin: 20px; background-color: #f8f9fa; border-radius: 10px; padding: 20px;">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row mb-4"> <!-- Add margin-bottom here -->
+                    <div class="row mb-4">
                         <!-- Box 1 -->
                         <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                            <div class="card border-0 shadow-lg h-100" style="cursor: pointer; transition: transform 0.3s; overflow: hidden;">
                                 <a href="/django">
-                                    <img src="{% static 'assets/img/django/image.jpg' %}" class="card-img-top" alt="Django" style="object-fit: cover; width: 100%; height: 200px;">
+                                    <img src="{% static 'assets/img/django/image.jpg' %}" class="card-img-top" alt="Django" style="object-fit: cover; width: 100%; height: 200px; border-radius: 10px;">
                                 </a>
-                                <div class="card-body" style="padding: 15px;">
+                                <div class="card-body" style="padding: 15px; text-align: center;">
                                     <h5 class="card-title">
-                                        <a href="/django" class="text-dark">Explore Django Blogs and Resources</a>
+                                        <a href="/django" class="text-dark" style="font-weight: bold;">Explore Django Blogs and Resources</a>
                                     </h5>
                                     <p class="card-text">Discover the latest in Django development with authoritative blogs and resources.</p>
-                                    <a href="/django" class="btn btn-primary">Read More</a>
+                                    <a href="/django" class="btn btn-primary" style="background: linear-gradient(to right, #4A90E2, #357ABD); border: none; transition: background-color 0.3s;">Read More</a>
                                 </div>
                             </div>
                         </div>
-        
                         <!-- Box 2 -->
                         <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                            <div class="card border-0 shadow-lg h-100" style="cursor: pointer; transition: transform 0.3s; overflow: hidden;">
                                 <a href="/nodejs">
-                                    <img src="{% static 'assets/img/django/nodejs.jpg' %}" class="card-img-top" alt="Node.js" style="object-fit: cover; width: 100%; height: 200px;">
+                                    <img src="{% static 'assets/img/django/nodejs.jpg' %}" class="card-img-top" alt="Node.js" style="object-fit: cover; width: 100%; height: 200px; border-radius: 10px;">
                                 </a>
-                                <div class="card-body" style="padding: 15px;">
+                                <div class="card-body" style="padding: 15px; text-align: center;">
                                     <h5 class="card-title">
-                                        <a href="/nodejs" class="text-dark">Insights into Node.js Development</a>
+                                        <a href="/nodejs" class="text-dark" style="font-weight: bold;">Insights into Node.js Development</a>
                                     </h5>
                                     <p class="card-text">Get in-depth knowledge and tips for mastering Node.js.</p>
-                                    <a href="/nodejs" class="btn btn-primary">Read More</a>
+                                    <a href="/nodejs" class="btn btn-primary" style="background: linear-gradient(to right, #4A90E2, #357ABD); border: none; transition: background-color 0.3s;">Read More</a>
                                 </div>
                             </div>
                         </div>
-        
                         <!-- Box 3 -->
                         <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                            <div class="card border-0 shadow-lg h-100" style="cursor: pointer; transition: transform 0.3s; overflow: hidden;">
                                 <a href="/python">
-                                    <img src="{% static 'assets/img/django/python.jpg' %}" class="card-img-top" alt="Python" style="object-fit: cover; width: 100%; height: 200px;">
+                                    <img src="{% static 'assets/img/django/python.jpg' %}" class="card-img-top" alt="Python" style="object-fit: cover; width: 100%; height: 200px; border-radius: 10px;">
                                 </a>
-                                <div class="card-body" style="padding: 15px;">
+                                <div class="card-body" style="padding: 15px; text-align: center;">
                                     <h5 class="card-title">
-                                        <a href="/python" class="text-dark">Master Python with Our Resources</a>
+                                        <a href="/python" class="text-dark" style="font-weight: bold;">Master Python with Our Resources</a>
                                     </h5>
                                     <p class="card-text">Explore comprehensive tutorials and guides on Python programming.</p>
-                                    <a href="/python" class="btn btn-primary">Read More</a>
+                                    <a href="/python" class="btn btn-primary" style="background: linear-gradient(to right, #4A90E2, #357ABD); border: none; transition: background-color 0.3s;">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
-        
                 <div class="carousel-item">
-                    <div class="row mb-4"> <!-- Add margin-bottom here -->
+                    <div class="row mb-4">
                         <!-- Box 4 -->
                         <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
+                            <div class="card border-0 shadow-lg h-100" style="cursor: pointer; transition: transform 0.3s; overflow: hidden;">
                                 <a href="/javascript">
-                                    <img src="{% static 'assets/img/django/javascript.jpg' %}" class="card-img-top" alt="JavaScript" style="object-fit: cover; width: 100%; height: 200px;">
+                                    <img src="{% static 'assets/img/django/javascript.jpg' %}" class="card-img-top" alt="JavaScript" style="object-fit: cover; width: 100%; height: 200px; border-radius: 10px;">
                                 </a>
-                                <div class="card-body" style="padding: 15px;">
+                                <div class="card-body" style="padding: 15px; text-align: center;">
                                     <h5 class="card-title">
-                                        <a href="/javascript" class="text-dark">JavaScript: A Comprehensive Guide</a>
+                                        <a href="/javascript" class="text-dark" style="font-weight: bold;">JavaScript: A Comprehensive Guide</a>
                                     </h5>
                                     <p class="card-text">Delve into the world of JavaScript with expert insights and tutorials.</p>
-                                    <a href="/javascript" class="btn btn-primary">Read More</a>
+                                    <a href="/javascript" class="btn btn-primary" style="background: linear-gradient(to right, #4A90E2, #357ABD); border: none; transition: background-color 0.3s;">Read More</a>
                                 </div>
                             </div>
                         </div>
-        
                         <!-- Box 5 -->
-                        <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
-                                <a href="/ruby">
-                                    <img src="{% static 'assets/img/django/ruby.jpg' %}" class="card-img-top" alt="Ruby" style="object-fit: cover; width: 100%; height: 200px;">
-                                </a>
-                                <div class="card-body" style="padding: 15px;">
-                                    <h5 class="card-title">
-                                        <a href="/ruby" class="text-dark">Explore Ruby Resources</a>
-                                    </h5>
-                                    <p class="card-text">Find top-tier Ruby blogs and resources for developers.</p>
-                                    <a href="/ruby" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-        
+                      
                         <!-- Box 6 -->
-                        <div class="col-lg-4 col-md-4 mb-4">
-                            <div class="card border-0 shadow-sm h-100" style="cursor: pointer;">
-                                <a href="/golang">
-                                    <img src="{% static 'assets/img/django/golang.jpg' %}" class="card-img-top" alt="Go" style="object-fit: cover; width: 100%; height: 200px;">
-                                </a>
-                                <div class="card-body" style="padding: 15px;">
-                                    <h5 class="card-title">
-                                        <a href="/golang" class="text-dark">Discover Go Programming</a>
-                                    </h5>
-                                    <p class="card-text">Learn everything about Go with our expert resources and tutorials.</p>
-                                    <a href="/golang" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -275,6 +246,8 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        
+        
 
 
         
@@ -315,125 +288,80 @@
 
     <div class="pd-top-80 pd-bottom-50" id="grid">
         <div class="container">
+
+
+
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/15.png' %}" alt="img">
-                            <a class="tag-base tag-purple" href="#">Tech</a>
+                    <div class="single-post-wrap style-overlay" style="height: 250px; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 20px;">
+                        <div class="thumb" style="position: relative;">
+                            <img src="{% static 'assets/django/postgressDjango/postgressdjango.png' %}" alt="img" style="max-height: 180px; object-fit: cover; width: 100%;">
+                            <a class="tag-base tag-purple" href="#" style="position: absolute; top: 10px; left: 10px; padding: 5px 10px; font-size: 0.9em;">Tech</a>
                         </div>
                         <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            <div class="post-meta-single" style="font-size: 0.9rem; color: #888;">
                             </div>
-                            <h6 class="title"><a href="#">Why Are the Offspring of Older </a></h6>
+                            <h6 class="title" style="font-size: 1rem; font-weight: 600; line-height: 1.3; margin-top: 10px;">
+                                <a href="/django/postgress-django">How to Connect PostgreSQL with Django</a>
+                            </h6>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-post-wrap style-overlay" style="height: 250px; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 20px;">
+                        <div class="thumb" style="position: relative;">
+                            <img src="{% static 'assets/python/pythonlogging.png' %}" alt="img" style="max-height: 180px; object-fit: cover; width: 100%;">
+                            <a class="tag-base tag-green" href="#" style="position: absolute; top: 10px; left: 10px; padding: 5px 10px; font-size: 0.9em;">Tech</a>
+                        </div>
+                        <div class="details">
+                            <div class="post-meta-single" style="font-size: 0.9rem; color: #888;">
+                            </div>
+                            <h6 class="title" style="font-size: 1rem; font-weight: 600; line-height: 1.3; margin-top: 10px;">
+                                <a href="/python/python-logger">Why Use Logging in Python?</a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
 
 
-                    </div>
-                </div>
+                 
                 <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/16.png' %}" alt="img">
-                            <a class="tag-base tag-green" href="#">Tech</a>
+                    <div class="single-post-wrap style-overlay" style="height: 250px; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 20px;">
+                        <div class="thumb" style="position: relative;">
+                            <img src="{% static 'assets/django/cpanel/cpanel.jpeg' %}" alt="img" style="max-height: 180px; object-fit: cover; width: 100%;">
+                            <a class="tag-base tag-green" href="#" style="position: absolute; top: 10px; left: 10px; padding: 5px 10px; font-size: 0.9em;">Tech</a>
                         </div>
                         <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            <div class="post-meta-single" style="font-size: 0.9rem; color: #888;">
                             </div>
-                            <h6 class="title"><a href="#">People Who Eat a Late Dinner May</a></h6>
+                            <h6 class="title" style="font-size: 1rem; font-weight: 600; line-height: 1.3; margin-top: 10px;">
+                                <a href="/django/staticconfiguration">Configure Static and Template Files in Django</a>
+                            </h6>
                         </div>
                     </div>
                 </div>
+
+                 
                 <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/17.png' %}" alt="img">
-                            <a class="tag-base tag-red" href="#">Tech</a>
+                    <div class="single-post-wrap style-overlay" style="height: 250px; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 20px;">
+                        <div class="thumb" style="position: relative;">
+                            <img src="{% static 'assets/python/beautifulsoupselenium.png' %}" alt="img" style="max-height: 180px; object-fit: cover; width: 100%;">
+                            <a class="tag-base tag-green" href="#" style="position: absolute; top: 10px; left: 10px; padding: 5px 10px; font-size: 0.9em;">Tech</a>
                         </div>
                         <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
+                            <div class="post-meta-single" style="font-size: 0.9rem; color: #888;">
                             </div>
-                            <h6 class="title"><a href="#">Kids eat more calories in </a></h6>
+                            <h6 class="title" style="font-size: 1rem; font-weight: 600; line-height: 1.3; margin-top: 10px;">
+                                <a href="/python/beautiful-soup-vs-selenium">Beautiful Soup vs. Selenium: Which Tool is Best for Web Scraping?</a>
+                            </h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/18.png' %}" alt="img">
-                            <a class="tag-base tag-purple" href="#">Tech</a>
-                        </div>
-                        <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
-                            </div>
-                            <h6 class="title"><a href="#">The FAA will test drone </a></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/19.png' %}" alt="img">
-                            <a class="tag-base tag-red" href="#">Tech</a>
-                        </div>
-                        <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
-                            </div>
-                            <h6 class="title"><a href="#">Lifting Weights Makes Your Nervous</a></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/20.png' %}" alt="img">
-                            <a class="tag-base tag-blue" href="#">Tech</a>
-                        </div>
-                        <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
-                            </div>
-                            <h6 class="title"><a href="#">New, Remote Weight-Loss Method </a></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/21.png' %}" alt="img">
-                            <a class="tag-base tag-light-green" href="#">Tech</a>
-                        </div>
-                        <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
-                            </div>
-                            <h6 class="title"><a href="#">Social Connection Boosts Fitness App </a></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-post-wrap style-overlay">
-                        <div class="thumb">
-                            <img src="{% static 'assets/img/post/22.png' %}" alt="img">
-                            <a class="tag-base tag-blue" href="#">Tech</a>
-                        </div>
-                        <div class="details">
-                            <div class="post-meta-single">
-                                <p><i class="fa fa-clock-o"></i>08.22.2020</p>
-                            </div>
-                            <h6 class="title"><a href="#">Internet For Things - New results </a></h6>
-                        </div>
-                    </div>
-                </div>
+                                
+
             </div>
 
-
-            
 
         </div>  
     </div>
@@ -445,7 +373,7 @@
                     <div class="widget">
                         <h5 class="widget-title">ABOUT US</h5>
                         <div class="widget_about">
-                            <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                            <p>Welcome to our blog, your go-to destination for comprehensive solutions across diverse technology stacks. We are dedicated to providing insightful tutorials, practical guides, and the latest industry trends to empower developers of all levels. Join us as we explore the exciting world of software development together!</p>
                             <ul class="social-area social-area-2 mt-4">
                                 <li><a class="facebook-icon" href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a class="twitter-icon" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -471,8 +399,6 @@
                             <a href="#">Video</a>
                             <a href="#">Game</a>
                             <a href="#">Gadgets</a>        
-
-
                         </div>
                     </div>
                 </div>
@@ -536,10 +462,9 @@
                 <ul class="widget_nav_menu">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">rivacy Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-                <p>Copyright ©2021 <a href="https://solverwp.com/">SolverWp</a></p>
             </div>
         </div>
     </div>

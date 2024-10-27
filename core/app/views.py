@@ -53,12 +53,20 @@ def Python(request):
     return render(request,'Python/MainPython.html')
 
 
+def PythonLogger(request):
+    
+    
+    
+    return render(request,'Python/pages/PythonLogger.html')
 
 
 def BeauSele(request):
     
     
     return render(request,'Python/pages/Beautiful&Selenium.html')
+
+
+
 
 
 

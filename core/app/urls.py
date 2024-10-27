@@ -15,8 +15,6 @@ urlpatterns = [
     path('django/cpanel/',Cpanel,name="cpanel-page"),
     path('django/postgress-django/',PostgressDjango,name="postgressdjango-page"),
     
-    
-    
     # Node urls
     
     path('nodejs/',Node,name="node-page"),
@@ -25,6 +23,7 @@ urlpatterns = [
     
     path('python/',Python,name="python-page"),  
     path('python/beautiful-soup-vs-selenium/',BeauSele,name="beautifulsoupSelenium-page"),  
+    path('python/python-logger/',PythonLogger,name="python-logging-page"),  
     
     
     # Javascript urls
@@ -32,6 +31,12 @@ urlpatterns = [
 
     
 ]
+
+
+
+
+
+
 
 
 
